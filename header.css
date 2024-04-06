@@ -17,9 +17,9 @@
 
 :root{
     --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    --accent: #7856b3;
-    --accent_hover:#37215f;
-    --disabled:#37215f62;
+    --accent: #384aeb;
+    --accent_hover:#131f92;
+    --disabled:#384aeb63;
 }
 
 h1{
@@ -103,6 +103,8 @@ h4{
     font-weight:600;
 }
 
+
+
 button{
     font-weight:600;
     background: var(--accent);
@@ -142,24 +144,13 @@ button:disabled{
 
 
 
-
-h3{
-    color:var(--accent);
-}
-
-
-
-
-
-
-
-
 .hero{
     min-height:747px;
     width:100%;
     background: white;
     padding-bottom:60px;
-    /* margin-top:148px; */
+    margin-top:105px;
+    padding-top:1px;
 }
 
 
@@ -194,7 +185,7 @@ h3{
 }
 
 .cent{
-    width:1200px;
+    width:1400px;
     height:100%;
     margin:0 auto;
     padding-top:1px;
@@ -283,6 +274,12 @@ body{
   .nav{
     width:100%;
     height:105px;
+    box-shadow:var(--shadow);
+    position:fixed;
+    top:0;
+    left:0;
+    background: white;
+    z-index: 100000;
   }
 
   .nav .cent{
@@ -327,4 +324,5 @@ body{
 
 .ext li i{
     font-size:20px;
+    color:black;
 }
