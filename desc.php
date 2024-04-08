@@ -3,6 +3,12 @@
         $id=$_GET["desc"];
     }
 
+    if(isset($_GET["added"])){
+        echo '  <div class="message" id="message">
+        added to cart
+    </div>';
+    }
+
 
     $products='';
     $disabled='';
@@ -83,9 +89,9 @@
             values('$product', '$category', '$price', '$quantity', '$image', '$id')");
 
             if($insert){
-                echo '  <div class="message" id="message">
-                added to cart
-            </div>';
+
+                header("location: index.php?desc=$id&added");
+               
             }
         }
     }

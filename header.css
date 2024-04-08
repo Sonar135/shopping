@@ -14,6 +14,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Yarndings+20+Charted&display=swap');
 
 :root{
     --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -97,10 +98,19 @@ h4{
     }
 }
 
+.logo_cont{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .logo_cont h1{
-    color:white;
-    font-weight:600;
+    color:black;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size:30px;
 }
 
 
@@ -151,6 +161,7 @@ button:disabled{
     padding-bottom:60px;
     margin-top:105px;
     padding-top:1px;
+    margin-bottom:400px;
 }
 
 
@@ -270,6 +281,7 @@ body{
   }
     
 
+  
 
   .nav{
     width:100%;

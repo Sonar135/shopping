@@ -32,7 +32,7 @@
     <div class="nav">
       <div class="cent">
         <div class="logo_cont">
-
+       <a href="index.php">  <h1>GREDDA</h1></a> 
         </div>
 
         <ul class="menu">

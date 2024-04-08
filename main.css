@@ -170,6 +170,7 @@
     height:60px;
     margin:0 50px;
     background: white;
+    position:relative;
 }
 
 .filter_op h4{
@@ -179,7 +180,130 @@
     font-size:20px;
 }
 
+.filter_op:hover .cat_drop, .filter_op:hover .price_drop, .filter_op:hover .stock_drop{
+    display:block;
+}
 
+.cat_drop{
+    width:250px;
+    height:340px;
+    position:absolute;
+    top:60px;
+    z-index:10000;
+    box-shadow:var(--shadow);
+    background: white;
+    animation: price_drop .5s;
+    display:none;
+}
+
+.stock_drop{
+    width:250px;
+    height:240px;
+    position:absolute;
+    top:60px;
+    z-index:10000;
+    box-shadow:var(--shadow);
+    background: white;
+    animation: price_drop .5s;
+    display:none;
+}
+
+.stock_drop ul{
+    width:100%;
+    height:100%;
+    padding:0px 18px;
+}
+
+.price_drop{
+    width:250px;
+    height:100px;
+    position:absolute;
+    top:60px;
+    z-index:10000;
+    box-shadow:var(--shadow);
+    background: white;
+    animation: price_drop .5s;
+    display:none;
+    /* padding:0 5px; */
+}
+
+@keyframes price_drop {
+    from{
+        opacity:0;
+        top:100px;
+    }
+
+    to{
+        opacity:1;
+        top:60px;
+    }
+}
+
+.price_drop button{
+    margin:0 auto;
+    padding:10px 16px;
+}
+
+input[type="number"]::-webkit-inner-spin-button{
+    appearance: none;
+}
+
+.input{
+    display:flex;
+    height:50px;
+    width:100%;
+}
+
+.price_drop input{
+    width:100px;
+    height:30px;
+    margin:0px 6px;
+    border:1px solid rgba(0, 0, 0, 0.449);
+    border-radius:8px;
+    padding:10px;
+}
+
+.price_drop i{
+    margin:18px 0;
+    width:20px;
+    color:black;
+    display:inline-block;
+    font-size:10px;
+    margin: 0px 0px;
+    margin-left:8px;
+}
+
+
+
+.cat_drop ul{
+    width:100%;
+    height:100%;
+    padding:0px 18px;
+}
+
+.cat_drop li{
+    margin:50px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.148);
+    width:100%;
+    padding-bottom:6px;
+}
+
+
+.stock_drop li{
+    margin:50px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.148);
+    width:100%;
+    padding-bottom:6px;
+}
+
+
+.cat_drop li a, .stock_drop li a{
+    font-weight:500;
+    font-size:20px;
+    text-transform: capitalize;
+}
 
 /* details............................................. */
 
