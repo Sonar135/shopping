@@ -254,6 +254,7 @@
     justify-content:center;
     align-items: center;
     border-radius:100px;
+    padding:0;
 }
 
 .dec i, .inc, i{
@@ -261,9 +262,7 @@
     font-size:18px;
 }
 
-.dec:hover, .inc:hover{
-    background: var(--accent_hover);
-}
+
 
 
 .quantity input{

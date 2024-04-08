@@ -1,10 +1,27 @@
 <?php
 
     $output='';
+    $disable_dec='';
+    $total_cost=0;
+    $disable_check='';
+    $total_payment=0;
+    $delivery=0;
 
     $query=mysqli_query($conn, "SELECT * from cart");
-
+    $disable_check= (mysqli_num_rows($query) < 1) ?'disabled':'';
     while($row=mysqli_fetch_array($query)){
+
+      $disable_dec = ($row["quantity"] < 2) ? 'disabled' : '';
+     
+
+      $row["price"]*=$row["quantity"];
+
+      $total_cost+=$row["price"];
+
+      $delivery=(mysqli_num_rows($query) > 0) ?2000: 0;
+
+      $total_payment=$delivery+$total_cost;
+
         $output.= '
         <div class="c_cont">
         <div class="top">
@@ -31,17 +48,17 @@
           </div></a> 
 
           <div class="quant">
-              <div class="dec">
+             <a href="dec.php?id='.$row["id"].'" class=""><button '.$disable_dec.' class="dec">
               <i class="fa-solid fa-minus"></i>
-              </div>
+              </button></a> 
 
                   <div class="q_num">
                       '.$row["quantity"].'
                   </div>
 
-               <div class="inc">
+             <a href="inc.php?id='.$row["id"].'" class="">  <button class="inc">
                <i class="fa-solid fa-plus"></i>
-              </div>
+              </button></a>
 
 
           </div>
@@ -75,17 +92,17 @@
                     <div class="summ_box">
                         <div class="ne">
                             <h3>Subtotal</h3>
-                            <h1>₦ 12000</h1>
+                            <h1>₦ <?php echo $total_cost?></h1>
 
                         </div>
                         <div class="ne">
                             
                         <h3>Delivery</h3>
-                            <h1>₦ 2000</h1>
+                            <h1>₦ <?php echo $delivery?></h1>
                         </div>
                     </div>
 
-                    <button>CHECKOUT (₦ 21000)</button>
+                    <button <?php echo $disable_check?>>CHECKOUT (₦ <?php echo $total_payment?>)</button>
                 </div>
             </div>
         </div>
