@@ -37,11 +37,11 @@
 
         <ul class="menu">
           <li>
-            <a href="">home</a>
+            <a href="index.php">home</a>
           </li>
 
           <li>
-            <a href="">products</a>
+            <a href="index.php?cat">products</a>
           </li>
 
           <li>
@@ -59,7 +59,7 @@
 
         <ul class="ext">
           <li><a href=""></a> <i class="fa-solid fa-magnifying-glass"></i></li>
-          <li><a href=""></a> <i class="fa-solid fa-cart-shopping"></i></li>
+          <li><a href="index.php?cart"><i class="fa-solid fa-cart-shopping"></i></a> </li>
        
         </ul>
       </div>

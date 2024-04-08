@@ -15,39 +15,26 @@
 </head>
 <body>
     <div class="hero">
-        <h1>CART</h1>
-        <div class="container sec5">
-            <div class="cent">
-                <div class="c_prod">
-                  <div class="c_cont">
-                      <div class="top">
-                        <div class="det">
-                            <div class="cart_img">
-                                <img src="images\watch.png" alt="">
-                            </div>
+       
+        <?php
+            if(isset($_GET["cat"])){
+                include "cat.php";
+            }
 
-                            <div class="prod_data">
-                                <h3>Quartz Belt Watch</h3>
-                                <h4>Accessories</h4>
-                            </div>
-                        </div>
 
-                        <div class="price">
-                        <h1> ₦ 12000</h1>
-                        </div>
-                    </div>
+            else if(isset($_GET["cart"])){
+                include "cart.php";
+            }
 
-                    <div class="bottom">
-                        
-                    </div>
-                  </div>
-                </div>
+            else if(isset($_GET["desc"])){
+                include "desc.php";
+            }
 
-                <div class="total_cont">
-                    
-                </div>
-            </div>
-        </div>
+            else{
+                include "home.php";
+            }
+        ?>
+      
     </div>
 </body>
 </html>
