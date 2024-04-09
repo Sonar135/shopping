@@ -93,3 +93,35 @@ footer{
     font-size:15px;
     line-height: 30px;
   }
+
+
+
+
+
+  @media screen  and (max-width: 1407px){
+    /* .nav{
+        display:none;
+    }
+
+    .hero{
+        margin-top:0;
+    }
+
+    
+    .sec1 .cent{
+        width:500px;
+        height:300px;
+    } */
+
+
+    footer{
+        width:100%;
+    }
+
+    footer .cent{
+      width:100%;
+    }
+}
+
+
+

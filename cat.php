@@ -10,6 +10,7 @@ $current_url = $_SERVER['PHP_SELF'];
     $query='';
     $fil_by_cat='';
     $fil_by_pri='';
+    $sort="";
 
 
 
@@ -122,6 +123,32 @@ $current_url = $_SERVER['PHP_SELF'];
 
 
 
+<?php
+    if(isset($_GET["q"])){
+        $q=$_GET["q"];
+
+        $sort_query=mysqli_query($conn, "SELECT * from products order by quantity $q");
+
+        while($row2=mysqli_fetch_array($sort_query)){
+            $sort.= '
+            <a href="index.php?desc='.$row2["id"].'"> <div class="prod_card">
+            <div class="prod_img">
+                <img src="uploads/'.$row2["image"].'" alt="">
+            </div>
+    
+           <div class="prod_text">
+           <h3>'.$row2["category"].'</h3>
+           <h1>'.$row2["product"].'</h1>
+           <h3>₦ '.$row2["price"].'</h3>
+           </div>
+        </div></a>
+            ';
+        }
+    }
+?>
+
+
+
 
 <h1>PRODUCTS</h1>
 <div class="container sec3">
@@ -159,8 +186,8 @@ $current_url = $_SERVER['PHP_SELF'];
                         <h4>Availability</h4>
 
                         <div class="stock_drop">
-                             <li><a href="index.php?cat=furniture">quantity ascending</a></li>
-                                <li><a href="index.php?cat=fashion">quantity descending</a></li>
+                             <li><a href="index.php?cat&q=desc">Most Available</a></li>
+                             <li><a href="index.php?cat&q=asc">Least Available</a></li>
                         </div>
                     </div>
 
@@ -177,6 +204,10 @@ $current_url = $_SERVER['PHP_SELF'];
 
                     else if(isset($_GET["from"]) && isset($_GET["to"])){
                         echo $fil_by_pri;
+                    }
+
+                    else if(isset($_GET["q"])){
+                        echo $sort;
                     }
 
                     else{

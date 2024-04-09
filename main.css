@@ -627,3 +627,93 @@ body{
 .hero{
     background: #f1f6f7;
 }
+
+
+
+
+
+
+@media screen and (min-width: 700px) and (max-width: 1407px){
+
+
+
+  
+
+    .cent{
+        width:100%;
+    }
+
+
+    .sec2 h1, .sec2 h3{
+        text-align: center;
+    }
+
+    .prod_card{
+        margin:12px 70px;
+    }
+
+    .sec2 .cent{
+        height:auto;
+        min-height:500px;
+    }
+
+    .prod_cont{
+        min-height:500px;
+        height:auto;
+    }
+
+    .sec2{
+        padding-bottom:30px;
+        min-height:500px;
+        height:auto;
+    }
+  
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1325px){
+
+    .prod_cont{
+        justify-content: center;
+    }
+}
+
+
+@media screen  and (max-width: 1069px){
+        .text h3{
+            margin:0;
+        }
+
+
+        .text button{
+            margin:10px 0;
+        }
+
+        .total_cont button{
+            font-size:14.5px;
+        }
+
+        .total_cont .ne h1{
+            font-size: 17px;
+        }
+
+        .desc{
+            font-size:14px;
+        }
+  }
+
+
+
+  @media screen  and (max-width: 950px){
+    .desc{
+        font-size:12px;
+    }
+  }
+
+  
